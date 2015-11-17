@@ -1,0 +1,7 @@
+gil_quiz:
+    resource: "@GILQuizBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
