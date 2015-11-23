@@ -1,3 +1,22 @@
-gil_queazy_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: GILQueazyBundle:Default:index }
+# Listage de l'ensemble des quiz
+gil_queazy_quiz:
+    path:     /quiz
+    defaults: { _controller: GILQueazyBundle:Visitor/ListeQuiz:liste }
+
+# Edition d'un quiz en particulier
+gil_queazy_edit_quiz:
+    path:     /user/{userID}/edit/{quizID}
+    defaults: { _controller: GILQueazyBundle:User/EditQuiz:edit }
+
+# Suppression d'un quiz
+gil_queazy_delete_quiz:
+    path:     /user/{userID}/delete/{quizID}
+    defaults: { _controller: GILQueazyBundle:User/DeleteQuiz:delete }
+
+# Affichage du panneau administrateur
+# - Affichage de l'ensemble des utilisateurs
+# - Lien vers les quiz associés à chaque utilisateur
+# - IL NE DOIT Y AVOIR QU'UN SEUL ADMINISTRATEUR
+gil_queazy_admin:
+    path:     /admin
+    defaults: { _controller: GILQueazyBundle:Admin/Admin:index }
