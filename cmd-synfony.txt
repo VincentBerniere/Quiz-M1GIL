@@ -1,0 +1,25 @@
+// Créer un Bundle :
+php app/console generate:bundle
+
+// Générer une entité :
+php app/console generate:doctrine:entity
+// NomBundle:NomEntité (ex: OCPlatformBundle:Advert)
+
+// créer la base de données
+php app/console doctrine:database:create
+
+// Générer les tables en fonction des entités
+php app/console doctrine:schema:update --dump-sql 
+php app/console doctrine:schema:update --force 
+
+// Update les entités 
+php app/console doctrine:generate:entities NomBundle:NomEntité
+// Update dans la BDD
+php app/console doctrine:schema:update --dump-sql
+php app/console doctrine:schema:update --force
+
+
+
+
+
+
