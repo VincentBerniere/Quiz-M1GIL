@@ -20,3 +20,17 @@ gil_queazy_delete_quiz:
 gil_queazy_admin:
     path:     /admin
     defaults: { _controller: GILQueazyBundle:Admin/Admin:index }
+
+gil_queazy_accueil:
+    path:     /
+    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
+
+gil_queazy_login:
+    path:     /
+    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
+
+gil_queazy_user:
+    path:     /user/{id}
+    defaults: { _controller: GILQueazyBundle:User/User:user }
+    requirements:
+        id: \d+
