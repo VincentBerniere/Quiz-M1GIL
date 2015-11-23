@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %} | Queazy</title>
+
+        <!-- Inclure CSS -->
+        <!-- Inclure JS -->
+
+    </head>
+    <body>
+
+        {% block navigation %}
+        <ul>
+            <li{% if menu_selected == 'Accueil' %} class="active"{% endif %}>
+                <a href="{{ path('gil_queazy_accueil') }}">Accueil</a></li>
+            <li{% if menu_selected == 'Quiz' %} class="active"{% endif %}>
+                <a href="{{ path('gil_queazy_quiz') }}">Quiz</a></li>
+            <li{% if menu_selected == 'Login' %} class="active"{% endif %}>
+                <a href="{{ path('gil_queazy_login') }}">Login</a></li>
+        </ul>
+        {% endblock %}
+
+        <div>
+            {% block body %}
+            {% endblock %}
+        </div>
+
+
+        <div class="footer">
+        </div>
+    </body>
+</html>
