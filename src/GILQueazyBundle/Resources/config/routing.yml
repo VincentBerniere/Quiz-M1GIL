@@ -1,0 +1,3 @@
+gil_queazy_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GILQueazyBundle:Default:index }

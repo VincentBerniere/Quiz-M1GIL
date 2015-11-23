@@ -1,3 +1,0 @@
-gil_quiz_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: GILQuizBundle:Default:index }

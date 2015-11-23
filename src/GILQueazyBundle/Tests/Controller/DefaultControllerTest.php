@@ -1,6 +1,6 @@
 <?php
 
-namespace GIL\QuizBundle\Tests\Controller;
+namespace GILQueazyBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

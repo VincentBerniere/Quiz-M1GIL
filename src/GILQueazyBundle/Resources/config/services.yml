@@ -1,4 +1,4 @@
 services:
-#    gil_quiz.example:
-#        class: GIL\QuizBundle\Example
+#    gil_queazy.example:
+#        class: GILQueazyBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
