@@ -54,7 +54,11 @@ class Quiz
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
-
+    
+    public function __construct()
+    {
+        $this->date = new \Datetime();
+    }
     /**
      * Get id
      *

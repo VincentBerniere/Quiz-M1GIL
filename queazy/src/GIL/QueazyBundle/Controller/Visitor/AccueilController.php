@@ -1,6 +1,6 @@
 <?php
 
-namespace GIL\QueazyBundle\Controller;
+namespace GIL\QueazyBundle\Controller\Visitor;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

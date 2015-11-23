@@ -1,11 +1,17 @@
 gil_queazy_accueil:
     path:     /
-    defaults: { _controller: GILQueazyBundle:Accueil:accueil }
+    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
     
 gil_queazy_quiz:
     path:     /
-    defaults: { _controller: GILQueazyBundle:Accueil:accueil }
+    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
     
 gil_queazy_login:
     path:     /
-    defaults: { _controller: GILQueazyBundle:Accueil:accueil }
+    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
+    
+gil_queazy_user:
+    path:     /user/{id}
+    defaults: { _controller: GILQueazyBundle:User/User:user }
+    requirements:
+        id: \d+
