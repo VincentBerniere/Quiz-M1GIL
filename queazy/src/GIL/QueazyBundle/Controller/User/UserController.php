@@ -16,12 +16,13 @@ class UserController extends Controller
         
         // On récupère la liste des quiz de l'utilisateur
         $listQuiz = $em->getRepository('GILQueazyBundle:Quiz')->findBy(
-            array('auteur' => $user->getLogin()), 
+            array('utilisateur' => $user),
             array('date' => 'asc')
         );
         
         return $this->render('GILQueazyBundle:User:user.html.twig', array(
-            'listQuiz'      => $listQuiz
+            'listQuiz' => $listQuiz,
+            'user' => $user
         ));
     }
 }

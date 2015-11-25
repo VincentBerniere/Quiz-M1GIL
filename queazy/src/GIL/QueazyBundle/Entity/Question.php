@@ -41,6 +41,10 @@ class Question
      */
     private $quiz;
 
+    public function __construct()
+    {
+    }
+
     /**
      * Get id
      *

@@ -1,4 +1,4 @@
-# Listage de l'ensemble des quiz
+    # Listage de l'ensemble des quiz
 gil_queazy_quiz:
     path:     /quiz
     defaults: { _controller: GILQueazyBundle:Visitor/ListeQuiz:liste }
@@ -21,16 +21,39 @@ gil_queazy_admin:
     path:     /admin
     defaults: { _controller: GILQueazyBundle:Admin/Admin:index }
 
+# Accueil de l'application
 gil_queazy_accueil:
     path:     /
     defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
 
+# Se connecter en tant qu'utilisateur ou administrateur
 gil_queazy_login:
     path:     /
     defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
 
+# Page de l'utilisateur pour gérer ses propres quiz
 gil_queazy_user:
     path:     /user/{id}
     defaults: { _controller: GILQueazyBundle:User/User:user }
     requirements:
         id: \d+
+
+gil_queazy_add_quiz:
+    path:   /user/{id}/add
+    defaults: { _controller: GILQueazyBundle:User/AddQuiz:addQuiz }
+    requirements:
+        id: \d+
+
+gil_queazy_add_quiz_question:
+    path:   /user/{id}/add/{quiz_id}
+    defaults: { _controller: GILQueazyBundle:User/AddQuiz:add }
+    requirements:
+        id: \d+
+        quiz_id: \d+
+
+gil_queazy_add_question:
+    path:   /user/{id}/add/{quiz_id}/question
+    defaults: { _controller: GILQueazyBundle:User/AddQuiz:addAnswer }
+    requirements:
+        id: \d+
+        quiz_id: \d+

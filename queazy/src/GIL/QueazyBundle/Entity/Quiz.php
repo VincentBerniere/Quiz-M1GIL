@@ -57,6 +57,9 @@ class Quiz
     
     public function __construct()
     {
+        $this->url = '';
+        $this->titre = '';
+        $this->auteur = '';
         $this->date = new \Datetime();
     }
     /**

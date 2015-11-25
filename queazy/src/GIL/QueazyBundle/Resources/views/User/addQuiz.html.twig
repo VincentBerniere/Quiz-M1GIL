@@ -1,0 +1,36 @@
+{% extends "GILQueazyBundle::base.html.twig" %}
+
+{% block title %}Ajout de Quiz{% endblock %}
+
+{% set menu_selected = 'AddQuiz' %}
+
+{% block body %}
+    <h1>AJOUT DE QUIZ</h1>
+
+    <section class="form-group">
+        <h3>{{ quiz.titre }}</h3>
+    </section>
+    <section>
+        <a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add/{{ quiz.id }}/question"
+           id="add-question" class="btn btn-success">Ajouter une question</a>
+    </section>
+    <section id="container-question">
+        <div>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>QUESTION</td>
+                </tr>
+                {% for question in listQuestion %}
+                <tr>
+                    <td>{{ question.id }}</td>
+                    <td>{{ question.questionContenu }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+   <a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}">
+       <button>Quiz Fini</button>
+   </a>
+{% endblock %}
