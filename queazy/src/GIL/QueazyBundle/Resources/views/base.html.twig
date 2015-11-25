@@ -5,30 +5,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %} | Queazy</title>
 
-        <!-- Inclure CSS -->
-        <!-- Inclure JS -->
+        <!-- Inclusion du CSS -->
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('bundles/queazy/css/foundation.min.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('bundles/queazy/css/app.css') }}"/>
+        {% endblock %}
+
+        <!-- Inclusion du JS -->
+        {% block scripts %}
+            <script src="{{ asset('bundles/queazy/js/fundation.min.js') }}"></script>
+        {% endblock %}
 
     </head>
     <body>
+        <div class="row container">
 
-        {% block navigation %}
-        <ul>
-            <li{% if menu_selected == 'Accueil' %} class="active"{% endif %}>
-                <a href="{{ path('gil_queazy_accueil') }}">Accueil</a></li>
-            <li{% if menu_selected == 'Quiz' %} class="active"{% endif %}>
-                <a href="{{ path('gil_queazy_quiz') }}">Quiz</a></li>
-            <li{% if menu_selected == 'Login' %} class="active"{% endif %}>
-                <a href="{{ path('gil_queazy_login') }}">Login</a></li>
-        </ul>
-        {% endblock %}
+            <!-- HEADER -->
+            {% block header %}
+                <div class="row header">
+                    <h1 class="text-center title">Queazy</h1>
+                </div>
+            {% endblock %}
 
-        <div>
-            {% block body %}
+            <!-- Liens de navigation -->
+            {% block navigation %}
+                <ul class="menu">
+                    <li class="menu-item {% if menu_selected == 'Accueil' %} active {% endif %}">
+                        <a href="{{ path('gil_queazy_accueil') }}">Accueil</a>
+                    </li>
+                    <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
+                        <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
+                    </li>
+                    <li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
+                        <a href="{{ path('gil_queazy_login') }}">Login</a>
+                    </li>
+                </ul>
+            {% endblock %}
+
+            <!-- Partie principale (BODY) -->
+            <div class="row body">
+                {% block body %}
+
+                {% endblock %}
+            </div>
+
+            <!-- Footer -->
+            {% block footer %}
+                <div class="row footer">
+                    <p class="text-center">Made with <i class="fa fa-heart"></i> and Symfony</p>
+                </div>
             {% endblock %}
         </div>
-
-
-        <div class="footer">
-        </div>
+        <script src="{{ asset('bundles/queazy/js/app.js') }}"></script>
     </body>
 </html>

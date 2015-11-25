@@ -1,1 +1,14 @@
-admin panel
+{% extends 'GILQueazyBundle::base.html.twig' %}
+
+{% set menu_selected = 'Accueil' %}
+
+{#
+
+  Attention !
+  Ce contenu ne sera accessible que par l'administrateur.
+
+#}
+
+{% block body %}
+  <h1>Administrateur</h1>
+{% endblock %}
