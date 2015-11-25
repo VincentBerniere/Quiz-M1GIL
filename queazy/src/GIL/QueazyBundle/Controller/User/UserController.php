@@ -16,11 +16,7 @@ class UserController extends Controller
 
         // On récupère la liste des quiz de l'utilisateur
         $listQuiz = $em->getRepository('GILQueazyBundle:Quiz')->findBy(
-<<<<<<< HEAD
             array('utilisateur' => $user),
-=======
-            array('auteur' => $user->getLogin()),
->>>>>>> origin/master
             array('date' => 'asc')
         );
 
