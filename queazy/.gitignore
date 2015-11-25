@@ -4,3 +4,6 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 queazy.sublime-*
+.buildpath
+.project
+/.settings/*
