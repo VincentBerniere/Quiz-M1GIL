@@ -1,2 +1,9 @@
-<h1>Edition du quiz {{ quizID }}</h1>
-<p>Par: {{ userID }}</p>
+{% extends 'GILQueazyBundle::base.html.twig' %}
+
+{% set menu_selected = 'Accueil' %}
+
+{% block body %}
+  <h1>Edition du quiz {{ quizID }}</h1>
+  <p>Par: {{ userID }}</p>
+{% endblock %}
+

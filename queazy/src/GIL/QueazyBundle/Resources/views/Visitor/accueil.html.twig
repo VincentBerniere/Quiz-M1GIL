@@ -5,8 +5,31 @@
 {% set menu_selected = 'Accueil' %}
 
 {% block body %}
-
     <h1>Bienvenue sur Queazy !</h1>
-    
-    <p>M1 informatique – Sujet de projet de Langages Web 1 – 2015 Une mini plate-forme de quiz riches</p>
+
+    <p class="text-center">M1 informatique – Sujet de projet de Langages Web 1 – 2015 Une mini plate-forme de quiz riches.</p>
+
+    <h2>Quiz récemment ajoutés</h2>
+
+    <table class="liste-quiz">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Nb. Questions</th>
+                <th>Note moyenne</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in listeQuiz %}
+                <tr>
+                    <td><a href="#">{{ quiz.nom }}</a></td>
+                    <td>{{ quiz.nbQuestions }}</td>
+                    <td>{{ quiz.noteMoyenne }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
 {% endblock %}
