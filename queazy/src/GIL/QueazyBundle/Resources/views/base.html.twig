@@ -6,10 +6,21 @@
         <title>{% block title %}{% endblock %} | Queazy</title>
 
         <!-- Inclure CSS -->
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/queazy/css/foundation.min.css') }}"/>
+        {% endblock %}
+
         <!-- Inclure JS -->
+        {% block scripts %}
+            <script src="{{ asset('bundles/queazy/js/fundation.min.js') }}"></script>
+        {% endblock %}
 
     </head>
     <body>
+
+        {% block header %}
+
+        {% endblock %}
 
         {% block navigation %}
         <ul>
@@ -27,8 +38,6 @@
             {% endblock %}
         </div>
 
-
-        <div class="footer">
-        </div>
+        <script src="{{ asset('bundles/queazy/js/app.js') }}"></script>
     </body>
 </html>

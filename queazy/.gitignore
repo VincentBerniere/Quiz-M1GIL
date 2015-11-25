@@ -3,4 +3,4 @@
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
-*.sublime-*
+queazy.sublime-*
