@@ -3,6 +3,9 @@
 namespace GIL\QueazyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
 
 /**
  * Utilisateur
@@ -40,6 +43,13 @@ class Utilisateur
      * @ORM\JoinColumn(nullable=false)
      */
     private $role;
+
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('login', new NotBlank());
+        $metadata->addPropertyConstraint('password', new NotBlank());
+        $metadata->addPropertyConstraint('password', new Length(array('min'=>4)));
+    }
 
     /**
      * Get id

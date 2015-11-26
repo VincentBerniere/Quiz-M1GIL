@@ -10,12 +10,14 @@
     <h3><a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add">Ajouter un Quiz</a></h3>
 
     <table>
-        <tr>
-            <td>ID</td>
-            <td>TITRE</td>
-            <td>AUTEUR</td>
-            <td>DATE</td>
-        </tr>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>TITRE</td>
+                <td>AUTEUR</td>
+                <td>DATE</td>
+            </tr>
+        </thead>
     {% for quiz in listQuiz %}
         <tr>
             <td>{{ quiz.id }}</td>

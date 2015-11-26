@@ -43,7 +43,7 @@ class AddQuizController extends Controller
         $form_r4->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid()) {
+        if ($form->isValid() && $form_r1->isValid()) {
 
             $reponse1->setQuestion($question);
             $em->persist($reponse1);

@@ -12,38 +12,37 @@ class AddQuestionType extends AbstractType
         
         $builder->add('questionTypeContenu', 'choice', array(
             'choices' => array(
-                'Type de Contenu'  => array('Texte', 'Image', 'MathML')
+                'Type de Contenu'  => array('1' => 'Texte', '2' => 'Image', '3' => 'MathML')
             ),
             'multiple' => false,
             'expanded' => true,
+            'data' => '1',
+            'required' => true,
             'attr' => array(
-                'class' => 'form-control',
-                'required' => true
+                'class' => 'large-3 columns',
             )
         ));
         
         $builder->add('questionContenu', 'text', array(
             'label' => false,
+            'required' => true,
             'attr' => array(
-                'class' => 'form-control',
                 'placeholder' => 'Question',
-                'required' => true
+                'class' => 'large-9 columns',
             )
         ));
         
         $builder->add('Valider', 'submit', array(
             'label' => false,
             'attr' => array(
-                'class' => 'form-control',
-                'required' => false
+                'class' => 'button',
             )
         ));     
         
          $builder->add('Annuler', 'reset', array(
             'label' => false,
             'attr' => array(
-                'class' => 'form-control',
-                'required' => false
+                'class' => 'button',
             )
         ));     
     }
