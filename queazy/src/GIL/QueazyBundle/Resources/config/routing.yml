@@ -3,16 +3,35 @@ gil_queazy_quiz:
     path:     /quiz
     defaults: { _controller: GILQueazyBundle:Visitor/ListeQuiz:liste }
 
-# Edition d'un quiz en particulier
-gil_queazy_edit_quiz:
-    path:     /user/{userID}/edit/{quizID}
-    defaults: { _controller: GILQueazyBundle:User/EditQuiz:edit }
+# Visualisation du quiz
+gil_queazy_quiz_questions:
+    path:     /quiz/{quiz_id}
+    defaults: { _controller: GILQueazyBundle:Visitor/ViewQuiz:view }
+    requirements:
+      quiz_id: \d+
+
+# Visualisation d'une question d'un quiz en particulier
+gil_queazy_quiz_questions_view:
+    path:     /quiz/{quiz_id}/question/{question_id}
+    defaults: { _controller: GILQueazyBundle:Visitor/ViewQuiz:viewQuestion }
+    requirements:
+      quiz_id: \d+
+      question_id: \d+
+
+# Visualisation du résultat final du quiz
+gil_queazy_delete_quiz:
+    path:     /quiz/{quiz_id}/resultat
+    defaults: { _controller: GILQueazyBundle:Visitor/ViewQuiz:resultat }
+    requirements:
+          quiz_id: \d+
 
 # Suppression d'un quiz
 gil_queazy_delete_quiz:
     path:     /user/{userID}/delete/{quizID}
     defaults: { _controller: GILQueazyBundle:User/DeleteQuiz:delete }
-
+    requirements:
+          quiz_id: \d+
+          question_id: \d+
 # Affichage du panneau administrateur
 # - Affichage de l'ensemble des utilisateurs
 # - Lien vers les quiz associés à chaque utilisateur
