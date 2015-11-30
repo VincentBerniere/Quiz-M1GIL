@@ -19,34 +19,39 @@
 
     </head>
     <body>
-        <div class="row container">
+        <div class="column row container">
 
             <!-- HEADER -->
             {% block header %}
                 <div class="row header">
-                    <h1 class="text-center title">Queazy</h1>
+                    <h1 class="text-center title">
+                        <a href="{{ path('gil_queazy_accueil') }}"><span class="rotate">Q</span>ueazy</a>
+                    </h1>
                 </div>
             {% endblock %}
 
             <!-- Liens de navigation -->
             {% block navigation %}
-                <ul class="menu">
-                    <li class="menu-item {% if menu_selected == 'Accueil' %} active {% endif %}">
-                        <a href="{{ path('gil_queazy_accueil') }}">Accueil</a>
-                    </li>
-                    <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
-                        <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
-                    </li>
-                    <li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
-                        <a href="{{ path('gil_queazy_login') }}">Login</a>
-                    </li>
-                </ul>
+                <div class="row navigation">
+                    <div class="large-6 large-offset-3 columns">
+                        <ul class="menu expanded">
+                            <li class="menu-item {% if menu_selected == 'Accueil' %} active {% endif %}">
+                                <a href="{{ path('gil_queazy_accueil') }}">Accueil</a>
+                            </li>
+                            <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
+                                <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
+                            </li>
+                            <li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
+                                <a href="{{ path('gil_queazy_login') }}">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             {% endblock %}
 
             <!-- Partie principale (BODY) -->
             <div class="row body">
                 {% block body %}
-
                 {% endblock %}
             </div>
 

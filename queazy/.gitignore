@@ -3,4 +3,8 @@
 /app/logs/*
 !app/cache/.gitkeep
 !app/logs/.gitkeep
-queazy.sublime-*
+queazy.sublime*
+.buildpath
+.project
+.idea
+/.settings/*

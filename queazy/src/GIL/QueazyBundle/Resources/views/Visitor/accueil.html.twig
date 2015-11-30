@@ -5,31 +5,76 @@
 {% set menu_selected = 'Accueil' %}
 
 {% block body %}
-    <h1>Bienvenue sur Queazy !</h1>
+    <div class="large-12 columns description">
 
-    <p class="text-center">M1 informatique – Sujet de projet de Langages Web 1 – 2015 Une mini plate-forme de quiz riches.</p>
+        <div class="row">
+            <h3 class="text-center">La plateforme de partage de quiz</h3>
+        </div>
 
-    <h2>Quiz récemment ajoutés</h2>
+        <div class="row">
+            <div class="large-4 columns">
+                <div class="callout">
+                    <h1 class="text-center"><i class="fa fa-star"></i></h1>
+                    <h5 class="text-center">- Création facilitée -</h5>
+                    <p class="text-justify">
+                        Ne vous prenez plus la tête avec des formulaire compliqué !
+                        Queazy vous propose une interface épurée qui vous permet d'aller
+                        directement à l'essentiel.
+                    </p>
+                </div>
+            </div>
+            <div class="large-4 columns">
+                <div class="callout">
+                    <h1 class="text-center"><i class="fa fa-image"></i></h1>
+                    <h5 class="text-center">- Support du vectoriel -</h5>
+                    <p class="text-justify">
+                        Fini les images lourdes à envoyer !
+                        Queazy supporte les fichiers .svg nativement; incorporez-les
+                        aussi facilement que vous écrivez du texte dans vos quiz.
+                    </p>
+                </div>
+            </div>
+            <div class="large-4 columns">
+                <div class="callout">
+                    <h1 class="text-center"><i class="fa fa-superscript"></i></h1>
+                    <h5 class="text-center">- Support de MathML -</h5>
+                    <p class="text-justify">
+                        Il a toujours été compliqué d'afficher des expressions
+                        mathématiques proprement dans le navigateur. C'est pourquoi
+                        Queazy vous propose de les rédiger au format MathML pour un
+                        rendu unique et uniforme.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <table class="liste-quiz">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Nb. Questions</th>
-                <th>Note moyenne</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for quiz in listeQuiz %}
-                <tr>
-                    <td><a href="#">{{ quiz.nom }}</a></td>
-                    <td>{{ quiz.nbQuestions }}</td>
-                    <td>{{ quiz.noteMoyenne }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        <tfoot>
+    {% if listeQuiz is defined %}
+    <div class="large-12 columns liste-quiz">
+        <div class="row">
+            <h3>Quiz récemment ajoutés</h3>
+        </div>
 
-        </tfoot>
-    </table>
+        <div class="row">
+            <table class="liste-quiz">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Nb. Questions</th>
+                        <th>Note moyenne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for quiz in listeQuiz %}
+                        <tr>
+                            <td><a href="#">{{ quiz.nom }}</a></td>
+                            <td>{{ quiz.nbQuestions }}</td>
+                            <td>{{ quiz.noteMoyenne }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}
