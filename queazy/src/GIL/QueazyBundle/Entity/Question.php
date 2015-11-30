@@ -3,6 +3,8 @@
 namespace GIL\QueazyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Question
@@ -41,8 +43,15 @@ class Question
      */
     private $quiz;
 
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addPropertyConstraint('questionContenu', new NotBlank());
+        $metadata->addPropertyConstraint('questionTypeContenu', new NotBlank());
+    }
+
     public function __construct()
     {
+        $this->questionTypeContenu = 'Texte';
     }
 
     /**

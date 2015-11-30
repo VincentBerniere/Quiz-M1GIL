@@ -13,9 +13,11 @@ class AddQuizType extends AbstractType
      
         $builder->add('titre', 'text', array(
             'label' => false,
+            'required' => true,
             'attr' => array(
                 'class' => 'form-control',
                 'placeholder' => 'Titre',
+                'class' => 'large-12 columns',
             )
         ));
     }
