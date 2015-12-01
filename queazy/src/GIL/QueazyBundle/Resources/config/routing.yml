@@ -45,11 +45,6 @@ gil_queazy_accueil:
     path:     /
     defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
 
-# Se connecter en tant qu'utilisateur ou administrateur
-gil_queazy_login:
-    path:     /
-    defaults: { _controller: GILQueazyBundle:Visitor/Accueil:accueil }
-
 # Page de l'utilisateur pour gérer ses propres quiz
 gil_queazy_user:
     path:     /user/{id}
