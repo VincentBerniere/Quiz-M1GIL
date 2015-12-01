@@ -19,7 +19,7 @@ gil_queazy_quiz_questions_view:
       question_id: \d+
 
 # Visualisation du résultat final du quiz
-gil_queazy_delete_quiz:
+gil_queazy_quiz_resultat:
     path:     /quiz/{quiz_id}/resultat
     defaults: { _controller: GILQueazyBundle:Visitor/ViewQuiz:resultat }
     requirements:
