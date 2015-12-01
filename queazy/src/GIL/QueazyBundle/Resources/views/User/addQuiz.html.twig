@@ -9,6 +9,8 @@
 
     <h3>Quiz : {{ quiz.titre }}</h3>
 
+    <p>Nombre de questions : {{ listQuestion|length }} </p>
+
     <a class="button" href="{{ path('gil_queazy_add_quiz') }}/{{ quiz.id }}/question"
        id="add-question" class="btn btn-success">Ajouter une question</a>
 

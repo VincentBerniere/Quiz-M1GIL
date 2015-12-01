@@ -12,17 +12,15 @@
     <table>
         <thead>
             <tr>
-                <td>ID</td>
                 <td>TITRE</td>
-                <td>AUTEUR</td>
+                <td>NB QUESTIONS</td>
                 <td>DATE</td>
             </tr>
         </thead>
     {% for quiz in listQuiz %}
         <tr>
-            <td>{{ quiz.id }}</td>
             <td>{{ quiz.titre }}</td>
-            <td>{{ quiz.auteur }}</td>
+            <td>{{ nbQuestions[quiz.id] }}</td>
             <td>{{ quiz.date|date("m/d/Y") }}</td>
             <td>Modifier</td>
             <td>Supprimer</td>

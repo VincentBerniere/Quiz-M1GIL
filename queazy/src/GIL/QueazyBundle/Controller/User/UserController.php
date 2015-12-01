@@ -19,10 +19,16 @@ class UserController extends Controller
             array('utilisateur' => $user),
             array('date' => 'asc')
         );
-
+        $nbQuestions = array();
+        foreach ($listQuiz as $key => $quiz) {
+            $nbQuestions[$quiz->getId()] = count($em->getRepository('GILQueazyBundle:Question')->findBy(
+                array('quiz' => $quiz)
+            ));
+        }
         return $this->render('GILQueazyBundle:User:user.html.twig', array(
             'listQuiz' => $listQuiz,
-            'user' => $user
+            'user' => $user,
+            'nbQuestions' => $nbQuestions
         ));
     }
 }

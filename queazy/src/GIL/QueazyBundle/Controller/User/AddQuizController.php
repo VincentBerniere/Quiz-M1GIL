@@ -90,8 +90,8 @@ class AddQuizController extends Controller
         return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
             'quiz' => $quiz,
             'user' => $user,
-            'listQuestion' => $listQuestion
-        ));
+            'listQuestion' => $listQuestion,
+    ));
     }
 
     public function addAnswerAction($quiz_id, Request $request)
