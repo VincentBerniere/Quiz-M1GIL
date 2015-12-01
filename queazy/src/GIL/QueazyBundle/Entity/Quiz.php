@@ -140,7 +140,7 @@ class Quiz
      */
     public function getAuteur()
     {
-        return $this->utilisateur->getLogin();
+        return $this->utilisateur->getUsername();
     }
     
     /**

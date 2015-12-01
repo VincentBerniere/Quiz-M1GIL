@@ -8,11 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class UserController extends Controller
 {
-    public function userAction($id)
+    public function userAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $user = $em->getRepository('GILQueazyBundle:Utilisateur')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
 
         // On récupère la liste des quiz de l'utilisateur
         $listQuiz = $em->getRepository('GILQueazyBundle:Quiz')->findBy(

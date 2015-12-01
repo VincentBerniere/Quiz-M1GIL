@@ -41,12 +41,25 @@
                             <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
                                 <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
                             </li>
+
                             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li class="menu-item {% if menu_selected == 'Mes quiz' %} active {% endif %}">
+                                <a href="{{ path('gil_queazy_user') }}">Mes Quiz</a></li>
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
+                                    <a href="{{ path('gil_queazy_admin') }}">Admin</a></li>
+                            {% endif %}
+
 							<li>{{ app.user.username }}</li>
-							<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+							<li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
+                                <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+
 							{% else %}
 							<li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
 								<a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+                            <li class="menu-item {% if menu_selected == 'Inscription' %} active {% endif %}">
+                                <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a></li>
 							{% endif %}
                         </ul>
                     </div>

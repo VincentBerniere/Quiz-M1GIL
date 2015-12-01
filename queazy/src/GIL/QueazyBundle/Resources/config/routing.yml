@@ -47,27 +47,21 @@ gil_queazy_accueil:
 
 # Page de l'utilisateur pour gérer ses propres quiz
 gil_queazy_user:
-    path:     /user/{id}
+    path:     /user
     defaults: { _controller: GILQueazyBundle:User/User:user }
-    requirements:
-        id: \d+
 
 gil_queazy_add_quiz:
-    path:   /user/{id}/add
+    path:   /user/add
     defaults: { _controller: GILQueazyBundle:User/AddQuiz:addQuiz }
-    requirements:
-        id: \d+
 
 gil_queazy_add_quiz_question:
-    path:   /user/{id}/add/{quiz_id}
+    path:   /user/add/{quiz_id}
     defaults: { _controller: GILQueazyBundle:User/AddQuiz:add }
     requirements:
-        id: \d+
         quiz_id: \d+
 
 gil_queazy_add_question:
-    path:   /user/{id}/add/{quiz_id}/question
+    path:   /user/add/{quiz_id}/question
     defaults: { _controller: GILQueazyBundle:User/AddQuiz:addAnswer }
     requirements:
-        id: \d+
         quiz_id: \d+

@@ -7,8 +7,7 @@
 {% block body %}
     <h1>AJOUT DE QUIZ</h1>
 
-    <form action="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add"
-          method="POST">
+    <form action="{{ path('gil_queazy_add_quiz') }}" method="POST">
         <fieldset class ='large-12 columns'>
             <legend>Quiz</legend>
             {{ form_errors(form) }}

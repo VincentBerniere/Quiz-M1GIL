@@ -7,7 +7,7 @@
 {% block body %}
     <h1>AJOUT DE QUESTION</h1>
 
-    <form action="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add/{{ quiz.id }}/question"
+    <form action="{{ path('gil_queazy_add_quiz') }}/{{ quiz.id }}/question"
           method="POST" class="form">
         <div class="row">
             {{ form_widget(form.questionTypeContenu) }}

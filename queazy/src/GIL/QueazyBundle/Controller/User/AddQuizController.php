@@ -17,9 +17,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AddQuizController extends Controller
 {
-    public function addQuizAction($id, Request $request) {
+    public function addQuizAction(Request $request) {
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('GILQueazyBundle:Utilisateur')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
         $quiz = new Quiz();
         $quiz->setUtilisateur($user);
 
@@ -77,10 +77,10 @@ class AddQuizController extends Controller
             'form4' => $form_r4->createView(),
         ));
     }
-    public function addAction($id, $quiz_id)
+    public function addAction($quiz_id)
     {
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('GILQueazyBundle:Utilisateur')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
 
         $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
@@ -94,10 +94,10 @@ class AddQuizController extends Controller
         ));
     }
 
-    public function addAnswerAction($id, $quiz_id, Request $request)
+    public function addAnswerAction($quiz_id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('GILQueazyBundle:Utilisateur')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
 
         $question = new Question();
