@@ -1,0 +1,19 @@
+{#
+    Ce fichier contient l'ensemble des macros utilisée
+    afin de générer les templates TWIG.
+
+    HOW TO USE THEM:
+    ================
+
+    . {% import "components/macros.html.twig" as helper %}
+ #}
+
+{# input field #}
+{% macro input(name, value, type, size) %}
+    <input type="{{ type|default('text') }}" name="{{name}}" value="{{value|e}}" size="{{size|default(20)}}">
+{% endmacro %}
+
+{# link field #}
+{% macro a(content, href) %}
+    <a href="{{ href|default('#')}}">{{content|e}}</a>
+{% endmacro %}

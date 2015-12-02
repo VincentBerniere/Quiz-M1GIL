@@ -1,0 +1,29 @@
+<div class="row navigation">
+    <div class="large-6 large-offset-3 columns">
+        <ul class="menu expanded">
+
+            {# Affichage des éléments du menu #}
+            {% for item in menuItems %}
+                <li class="menu-item {% if menu_selected == item.name %} active {% endif %}">
+                    <a href="{{ path('gil_queazy_' ~ item.path) }}">{{item.name}}</a>
+                </li>
+            {% endfor %}
+
+            {#
+            <li class="menu-item {% if menu_selected == 'Accueil' %} active {% endif %}">
+                <a href="{{ path('gil_queazy_accueil') }}">Accueil</a>
+            </li>
+            <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
+                <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
+            </li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <li>{{ app.user.username }}</li>
+            <li class="menu-item"><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+            {% else %}
+            <li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
+                <a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+            {% endif %}
+            #}
+        </ul>
+    </div>
+</div>
