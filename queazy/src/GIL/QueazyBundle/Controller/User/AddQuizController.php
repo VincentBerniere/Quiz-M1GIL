@@ -76,21 +76,13 @@ class AddQuizController extends Controller
                 $nbReponse++;
             }
 
-            if ($nbReponse++ >= 2) {
+            if ($nbReponse >= 2) {
                 $em->persist($question);
                 $em->persist($quiz);
 
                 $em->flush();
 
-                $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
-                    array('quiz' => $quiz)
-                );
-
-                return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
-                    'quiz' => $quiz,
-                    'user' => $user,
-                    'listQuestion' => $listQuestion
-                ));
+                return $this->redirect($this->generateUrl('gil_queazy_add_quiz').'/'.$quiz->getId());
             }
         }
 
@@ -112,11 +104,17 @@ class AddQuizController extends Controller
         $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
             array('quiz' => $quiz)
         );
-
+        $nbReponses = array();
+        foreach($listQuestion as $question) {
+            $nbReponses[$question->getId()] = count($em->getRepository('GILQueazyBundle:Reponse')->findBy(
+                array('question' => $question)
+            ));
+        }
         return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
             'quiz' => $quiz,
             'user' => $user,
             'listQuestion' => $listQuestion,
+            'nbReponses' => $nbReponses,
         ));
     }
 
@@ -183,20 +181,13 @@ class AddQuizController extends Controller
                 $nbReponse++;
             }
 
-            if ($nbReponse++ >= 2) {
+            if ($nbReponse >= 2) {
                 $em->persist($question);
                 $em->persist($quiz);
 
                 $em->flush();
 
-                $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
-                    array('quiz' => $quiz)
-                );
-                return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
-                    'quiz' => $quiz,
-                    'user' => $user,
-                    'listQuestion' => $listQuestion
-                ));
+                return $this->redirect($this->generateUrl('gil_queazy_add_quiz').'/'.$quiz->getId());
             }
         }
         
