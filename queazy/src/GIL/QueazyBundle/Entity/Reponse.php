@@ -3,6 +3,7 @@
 namespace GIL\QueazyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reponse
@@ -23,7 +24,7 @@ class Reponse
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="reponse_contenu", type="text", nullable=true)
      */
     private $reponseContenu;

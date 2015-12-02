@@ -13,18 +13,22 @@
             {{ form_widget(form.questionTypeContenu) }}
             {{ form_widget(form.questionContenu) }}
         </div>
+        <p>(Saisir au minimum 2 réponses)</p>
         <div class="row">
             {{ form_widget(form1.reponseTypeContenu) }}
             {{ form_widget(form1.reponseContenu) }}
-
+            {{ form_rest(form1) }}
             {{ form_widget(form2.reponseTypeContenu) }}
             {{ form_widget(form2.reponseContenu) }}
+            {{ form_rest(form2) }}
         </div>
         <div class="row">
             {{ form_widget(form3.reponseTypeContenu) }}
             {{ form_widget(form3.reponseContenu) }}
+            {{ form_rest(form3) }}
             {{ form_widget(form4.reponseTypeContenu) }}
             {{ form_widget(form4.reponseContenu) }}
+            {{ form_rest(form4) }}
         </div>
         <div class="row">
             <select name="select">
@@ -40,6 +44,7 @@
                 {{ form_widget(form.Annuler) }}
             </div>
         </div>
+        <a href="{{ path('gil_queazy_add_quiz') }}/{{ quiz.id }}">Retour au quiz</a>
         {{ form_widget(form._token) }}
     </form>
 {% endblock %}

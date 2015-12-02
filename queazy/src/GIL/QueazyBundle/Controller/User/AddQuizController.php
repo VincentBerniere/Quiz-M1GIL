@@ -31,10 +31,18 @@ class AddQuizController extends Controller
         $reponse2 = new Reponse();
         $reponse3 = new Reponse();
         $reponse4 = new Reponse();
-        $form_r1 = $this->createForm(new AddReponseType(), $reponse1);
-        $form_r2 = $this->createForm(new AddReponseType(), $reponse2);
-        $form_r3 = $this->createForm(new AddReponseType(), $reponse3);
-        $form_r4 = $this->createForm(new AddReponseType(), $reponse4);
+
+        $form_r1 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_1',new AddReponseType(), $reponse1)
+            ->getForm();
+
+        $form_r2 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_2',new AddReponseType(), $reponse2)
+            ->getForm();
+
+        $form_r3 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_3',new AddReponseType(), $reponse3)
+            ->getForm();
+
+        $form_r4 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_4',new AddReponseType(), $reponse4)
+            ->getForm();
 
         $form->handleRequest($request);
         $form_r1->handleRequest($request);
@@ -42,32 +50,50 @@ class AddQuizController extends Controller
         $form_r3->handleRequest($request);
         $form_r4->handleRequest($request);
 
-        // On vérifie que les valeurs entrées sont correctes
-        if ($form->isValid() && $form_r1->isValid()) {
+        if('POST' === $request->getMethod() && $form->isValid()) {
+            $nbReponse = 0;
+            if ($form_r1->isValid()) {
+                $reponse1->setQuestion($question);
+                $em->persist($reponse1);
+                $nbReponse++;
+            }
 
-            $reponse1->setQuestion($question);
-            $em->persist($reponse1);
-            $reponse2->setQuestion($question);
-            $em->persist($reponse2);
-            $reponse3->setQuestion($question);
-            $em->persist($reponse3);
-            $reponse4->setQuestion($question);
-            $em->persist($reponse4);
+            if ($form_r2->isValid()) {
+                $reponse2->setQuestion($question);
+                $em->persist($reponse2);
+                $nbReponse++;
+            }
 
-            $em->persist($question);
-            $em->persist($quiz);
-            $em->flush();
+            if ($form_r3->isValid()) {
+                $reponse3->setQuestion($question);
+                $em->persist($reponse3);
+                $nbReponse++;
+            }
 
-            $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
-                array('quiz' => $quiz)
-            );
+            if ($form_r4->isValid()) {
+                $reponse4->setQuestion($question);
+                $em->persist($reponse4);
+                $nbReponse++;
+            }
 
-            return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
-                'quiz' => $quiz,
-                'user' => $user,
-                'listQuestion' => $listQuestion
-            ));
+            if ($nbReponse++ >= 2) {
+                $em->persist($question);
+                $em->persist($quiz);
+
+                $em->flush();
+
+                $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
+                    array('quiz' => $quiz)
+                );
+
+                return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
+                    'quiz' => $quiz,
+                    'user' => $user,
+                    'listQuestion' => $listQuestion
+                ));
+            }
         }
+
         return $this->render('GILQueazyBundle:User:add.html.twig', array(
             'user' => $user,
             'form' => $form->createView(),
@@ -91,7 +117,7 @@ class AddQuizController extends Controller
             'quiz' => $quiz,
             'user' => $user,
             'listQuestion' => $listQuestion,
-    ));
+        ));
     }
 
     public function addAnswerAction($quiz_id, Request $request)
@@ -111,10 +137,17 @@ class AddQuizController extends Controller
         // Formulaire
         $form_q = $this->createForm(new AddQuestionType(), $question);
 
-        $form_r1 = $this->createForm(new AddReponseType(), $reponse1);
-        $form_r2 = $this->createForm(new AddReponseType(), $reponse2);
-        $form_r3 = $this->createForm(new AddReponseType(), $reponse3);
-        $form_r4 = $this->createForm(new AddReponseType(), $reponse4);
+        $form_r1 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_1',new AddReponseType(), $reponse1)
+            ->getForm();
+
+        $form_r2 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_2',new AddReponseType(), $reponse2)
+            ->getForm();
+
+        $form_r3 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_3',new AddReponseType(), $reponse3)
+            ->getForm();
+
+        $form_r4 = $this->get('form.factory')->createNamedBuilder('form_add_reponse_4',new AddReponseType(), $reponse4)
+            ->getForm();
         
         // On fait le lien Requête <-> Formulaire
         $form_q->handleRequest($request);
@@ -124,31 +157,47 @@ class AddQuizController extends Controller
         $form_r4->handleRequest($request);
 
         // On vérifie que les valeurs entrées sont correctes
-        if ($form_q->isValid()) {
-            $reponse1->setQuestion($question);
-            $em->persist($reponse1);
-            $reponse2->setQuestion($question);
-            $em->persist($reponse2);
-            $reponse3->setQuestion($question);
-            $em->persist($reponse3);
-            $reponse4->setQuestion($question);
-            $em->persist($reponse4);
-            $question->setQuiz($quiz);
-                
-            // On l'enregistre notre objet dans la base de données            
-            $em->persist($question);
-            $em->flush();
+        if('POST' === $request->getMethod() && $form_q->isValid()) {
+            $nbReponse = 0;
+            if ($form_r1->isValid()) {
+                $reponse1->setQuestion($question);
+                $em->persist($reponse1);
+                $nbReponse++;
+            }
 
-            $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
-                array('quiz' => $quiz)
-            );
+            if ($form_r2->isValid()) {
+                $reponse2->setQuestion($question);
+                $em->persist($reponse2);
+                $nbReponse++;
+            }
 
-            // On redirige vers la page de visualisation du quiz créée
-            return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
-                'quiz' => $quiz,
-                'listQuestion' => $listQuestion,
-                'user' => $user
-            ));
+            if ($form_r3->isValid()) {
+                $reponse3->setQuestion($question);
+                $em->persist($reponse3);
+                $nbReponse++;
+            }
+
+            if ($form_r4->isValid()) {
+                $reponse4->setQuestion($question);
+                $em->persist($reponse4);
+                $nbReponse++;
+            }
+
+            if ($nbReponse++ >= 2) {
+                $em->persist($question);
+                $em->persist($quiz);
+
+                $em->flush();
+
+                $listQuestion = $em->getRepository('GILQueazyBundle:Question')->findBy(
+                    array('quiz' => $quiz)
+                );
+                return $this->render('GILQueazyBundle:User:addQuiz.html.twig', array(
+                    'quiz' => $quiz,
+                    'user' => $user,
+                    'listQuestion' => $listQuestion
+                ));
+            }
         }
         
         return $this->render('GILQueazyBundle:User:addQuestion.html.twig', array(

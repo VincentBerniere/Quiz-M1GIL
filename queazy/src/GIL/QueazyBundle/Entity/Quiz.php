@@ -3,8 +3,7 @@
 namespace GIL\QueazyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Quiz
@@ -25,7 +24,7 @@ class Quiz
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank()
      * @ORM\Column(name="titre", type="text")
      */
     private $titre;
@@ -49,11 +48,6 @@ class Quiz
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        $metadata->addPropertyConstraint('titre', new NotBlank());
-    }
 
     public function __construct()
     {
