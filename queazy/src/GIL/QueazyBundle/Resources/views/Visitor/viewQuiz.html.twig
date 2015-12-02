@@ -1,12 +1,12 @@
 {% extends "GILQueazyBundle::base.html.twig" %}
 
-{% set menu_selected = '' %}
+{% set menu_selected = 'Quiz' %}
 
 {% block title %}Quiz{% endblock %}
 
 {% block body %}
     <div class="row">
-        <h3>{{ quiz.titre }}</h3>
+        <h3>{#{ quiz.titre }#}Titre</h3>
     </div>
 
     <div class="row">
@@ -15,14 +15,14 @@
 
     <div class="row">
         <ul>
-        {% for question in questions %}
+        {# for question in questions %}
             <div class ='large-12 columns'>
                 <li>{{ question.questionContenu }}</li>
             </div>
-        {% endfor %}
+        {% endfor #}
         </ul>
     </div>
     <div class="row">
-        <a href="{{ path('gil_queazy_accueil') }}quiz/{{ quiz.id }}/question/{{ (questions|first).id }}">Commencer le Quiz !</a>
+        <a href="{#{ path('gil_queazy_accueil') }}quiz/{{ quiz.id }}/question/{{ (questions|first).id }#}">Commencer le Quiz !</a>
     </div>
 {% endblock %}

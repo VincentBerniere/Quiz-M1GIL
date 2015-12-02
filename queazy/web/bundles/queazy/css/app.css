@@ -26,18 +26,17 @@ body {
     width: 250px;
 }
 .menu-item {
-    border-bottom: 0px solid transparent;
-    transition: border 0.3s ease;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom-color 0.3s ease;
 }
 .menu-item.active {
-    border-bottom: 3px solid #ffffff;
+    border-bottom-color: #ffffff;
 }
 .menu-item:hover {
-    border-bottom-color: 3px solid #ffffff;
+    border-bottom-color: #ffffff;
 }
 .menu-item a {
     color: white;
-    /* color: #2FA66A; */
 }
 .description {
     margin-top: 40px;

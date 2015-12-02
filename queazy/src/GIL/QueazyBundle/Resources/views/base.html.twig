@@ -1,3 +1,13 @@
+ {# This block is used to declare and store global variables. #}
+
+{# Menu links #}
+{%
+    set menuItems = [
+        { name: 'Accueil'  , path: 'accueil' },
+        { name: 'Quiz'     , path: 'quiz'    },
+        { name: 'Connexion', path: 'login'   }
+    ]
+%}
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -32,25 +42,7 @@
 
             <!-- Liens de navigation -->
             {% block navigation %}
-                <div class="row navigation">
-                    <div class="large-6 large-offset-3 columns">
-                        <ul class="menu expanded">
-                            <li class="menu-item {% if menu_selected == 'Accueil' %} active {% endif %}">
-                                <a href="{{ path('gil_queazy_accueil') }}">Accueil</a>
-                            </li>
-                            <li class="menu-item {% if menu_selected == 'Quiz' %} active {% endif %}">
-                                <a href="{{ path('gil_queazy_quiz') }}">Quiz</a>
-                            </li>
-                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-							<li>{{ app.user.username }}</li>
-							<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
-							{% else %}
-							<li class="menu-item {% if menu_selected == 'Login' %} active {% endif %}">
-								<a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
-							{% endif %}
-                        </ul>
-                    </div>
-                </div>
+                {% include 'GILQueazyBundle::components/menu.html.twig' with menuItems %}
             {% endblock %}
 
             <!-- Partie principale (BODY) -->

@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    {% if listeQuiz is defined %}
+    {% if quizs is defined %}
     <div class="large-12 columns liste-quiz">
         <div class="row">
             <h3>Quiz récemment ajoutés</h3>
@@ -61,15 +61,15 @@
                     <tr>
                         <th>Nom</th>
                         <th>Nb. Questions</th>
-                        <th>Note moyenne</th>
+                        <!-- <th>Note moyenne</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    {% for quiz in listeQuiz %}
+                    {% for quiz in quizs %}
                         <tr>
-                            <td><a href="#">{{ quiz.nom }}</a></td>
-                            <td>{{ quiz.nbQuestions }}</td>
-                            <td>{{ quiz.noteMoyenne }}</td>
+                            <td><a href="#">{{ quiz.quiz.titre }}</a></td>
+                            <td>{{ quiz.nb_questions }}</td>
+                            <!-- <td>{#{ quiz.noteMoyenne }#}</td> -->
                         </tr>
                     {% endfor %}
                 </tbody>
