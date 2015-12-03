@@ -15,32 +15,27 @@
                 {{ form_widget(form.quiz) }}
             </div>
             <div class="row">
-                {{ form_widget(form.questionTypeContenu) }}
                 {{ form_widget(form.questionContenu) }}
             </div>
             <p>(Saisir au minimum 2 réponses)</p>
             <div class="row">
-                {{ form_widget(form1.reponseTypeContenu) }}
                 {{ form_widget(form1.reponseContenu) }}
                 {{ form_rest(form1) }}
-                {{ form_widget(form2.reponseTypeContenu) }}
                 {{ form_widget(form2.reponseContenu) }}
                 {{ form_rest(form2) }}
             </div>
             <div class="row">
-                {{ form_widget(form3.reponseTypeContenu) }}
                 {{ form_widget(form3.reponseContenu) }}
                 {{ form_rest(form3) }}
-                {{ form_widget(form4.reponseTypeContenu) }}
                 {{ form_widget(form4.reponseContenu) }}
                 {{ form_rest(form4) }}
             </div>
             <div class="row">
-                <select name="select">
-                    <option value="reponse1">Réponse 1</option>
-                    <option value="reponse2" selected>Réponse 2</option>
-                    <option value="reponse3">Réponse 3</option>
-                    <option value="reponse4">Réponse 4</option>
+                <select name="reponse_choice">
+                    <option name="reponse1">Réponse 1</option>
+                    <option name="reponse2">Réponse 2</option>
+                    <option name="reponse3">Réponse 3</option>
+                    <option name="reponse4">Réponse 4</option>
                 </select>
             </div>
             <div class="row">

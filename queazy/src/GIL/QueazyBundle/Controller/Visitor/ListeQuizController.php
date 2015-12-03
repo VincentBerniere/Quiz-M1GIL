@@ -20,7 +20,7 @@ class ListeQuizController extends Controller
 
         // 2. Choisir le nombre de quiz à afficher par pages
         // 3. retourner les quiz correspondant à la page en cours.
-        return $this->render('GILQueazyBundle:Visitor:viewQuiz.html.twig', array(
+        return $this->render('GILQueazyBundle:Visitor:liste.html.twig', array(
             'listeQuiz' => $listeQuiz
         ));
     }

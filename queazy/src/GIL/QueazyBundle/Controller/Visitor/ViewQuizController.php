@@ -12,6 +12,7 @@ class ViewQuizController extends Controller
     public function viewAction($quiz_id) {
         $em = $this->getDoctrine()->getManager();
 
+        $quiz = null;
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
         $questions = $em->getRepository('GILQueazyBundle:Question')->findBy(
             array('quiz' => $quiz)
@@ -34,13 +35,14 @@ class ViewQuizController extends Controller
 
         $q_suivante = null;
         $prochaine = false;
+        $listQuestions = null;
         $listQuestions = $em->getRepository('GILQueazyBundle:Question')->findAll();
-        foreach($listQuestions as $question) {
+        foreach($listQuestions as $q) {
             if ($prochaine) {
-                $q_suivante = $question;
+                $q_suivante = $q;
                 $prochaine = false;
             }
-            if ($question->getId() == $question_id) {
+            if ($q->getId() == $question_id) {
                 $prochaine = true;
             }
         }

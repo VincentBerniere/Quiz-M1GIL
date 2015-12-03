@@ -52,31 +52,48 @@ class AddQuizController extends Controller
 
         if('POST' === $request->getMethod() && $form->isValid()) {
             $nbReponse = 0;
+            $data = $request->request->get('reponse_choice');
+
             if ($form_r1->isValid()) {
                 $reponse1->setQuestion($question);
+
+                if ($data == 'Réponse 1') {
+                   $reponse1->setCorrecte(true);
+                }
                 $em->persist($reponse1);
                 $nbReponse++;
             }
 
             if ($form_r2->isValid()) {
                 $reponse2->setQuestion($question);
+                if ($data == 'Réponse 2') {
+                    $reponse2->setCorrecte(true);
+                }
                 $em->persist($reponse2);
                 $nbReponse++;
             }
 
             if ($form_r3->isValid()) {
                 $reponse3->setQuestion($question);
+                if ($data == 'Réponse 3') {
+                    $reponse3->setCorrecte(true);
+                }
                 $em->persist($reponse3);
                 $nbReponse++;
             }
 
             if ($form_r4->isValid()) {
                 $reponse4->setQuestion($question);
+                if ($data == 'Réponse 4') {
+                    $reponse4->setCorrecte(true);
+                }
                 $em->persist($reponse4);
                 $nbReponse++;
             }
 
-            if ($nbReponse >= 2) {
+            if ($nbReponse >= 2 && (($data == 'Réponse 1' && $form_r1->isValid())
+                || ($data == 'Réponse 2' && $form_r2->isValid()) || ($data == 'Réponse 3' && $form_r3->isValid())
+                || ($data == 'Réponse 4' && $form_r4->isValid()))) {
                 $em->persist($question);
                 $em->persist($quiz);
 
@@ -157,31 +174,48 @@ class AddQuizController extends Controller
         // On vérifie que les valeurs entrées sont correctes
         if('POST' === $request->getMethod() && $form_q->isValid()) {
             $nbReponse = 0;
+            $data = $request->request->get('reponse_choice');
+
             if ($form_r1->isValid()) {
                 $reponse1->setQuestion($question);
+
+                if ($data == 'Réponse 1') {
+                    $reponse1->setCorrecte(true);
+                }
                 $em->persist($reponse1);
                 $nbReponse++;
             }
 
             if ($form_r2->isValid()) {
                 $reponse2->setQuestion($question);
+                if ($data == 'Réponse 2') {
+                    $reponse2->setCorrecte(true);
+                }
                 $em->persist($reponse2);
                 $nbReponse++;
             }
 
             if ($form_r3->isValid()) {
                 $reponse3->setQuestion($question);
+                if ($data == 'Réponse 3') {
+                    $reponse3->setCorrecte(true);
+                }
                 $em->persist($reponse3);
                 $nbReponse++;
             }
 
             if ($form_r4->isValid()) {
                 $reponse4->setQuestion($question);
+                if ($data == 'Réponse 4') {
+                    $reponse4->setCorrecte(true);
+                }
                 $em->persist($reponse4);
                 $nbReponse++;
             }
 
-            if ($nbReponse >= 2) {
+            if ($nbReponse >= 2 && (($data == 'Réponse 1' && $form_r1->isValid())
+                    || ($data == 'Réponse 2' && $form_r2->isValid()) || ($data == 'Réponse 3' && $form_r3->isValid())
+                    || ($data == 'Réponse 4' && $form_r4->isValid()))) {
                 $em->persist($question);
                 $em->persist($quiz);
 

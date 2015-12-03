@@ -1,0 +1,30 @@
+{% extends "GILQueazyBundle::base.html.twig" %}
+
+{% set menu_selected = 'Quiz' %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block body %}
+    <h2>Quiz</h2>
+
+    <div class="row quiz">
+        <div class="small-10 small-centered columns">
+            <ul class="quiz-infos">
+                {% for quiz in listeQuiz %}
+                    <a href="{{ path('gil_queazy_quiz') }}/{{ quiz.id }}">
+                        <li class="quiz-infos item">
+                            <div class="row">
+                                <div class="small-10 columns text-centered quiz-name">
+                                    {{ quiz.titre }}
+                                </div>
+                                <div class="small-2 columns text-centered quiz-date">
+                                    <small>Ajouté le {{ quiz.date|date("m/d/Y") }}</small>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

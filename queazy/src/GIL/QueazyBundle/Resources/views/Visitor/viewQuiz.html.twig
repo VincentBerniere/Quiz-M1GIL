@@ -5,26 +5,24 @@
 {% block title %}Quiz{% endblock %}
 
 {% block body %}
-    <h2>Quiz</h2>
+    <h3>{{ quiz.titre }}</h3>
 
     <div class="row quiz">
         <div class="small-10 small-centered columns">
+            <h5>Liste des questions du quiz :</h5>
             <ul class="quiz-infos">
-            {% for quiz in listeQuiz %}
-                <a href="#">
+                {% for question in questions %}
                     <li class="quiz-infos item">
                         <div class="row">
                             <div class="small-10 columns text-centered quiz-name">
-                               {{ quiz.titre }}
-                            </div>
-                            <div class="small-2 columns text-centered quiz-date">
-                                <small>Ajouté le {{ quiz.date|date("m/d/Y") }}</small>
+                                {{ question.questionContenu }}
                             </div>
                         </div>
                     </li>
-                </a>
-            {% endfor %}
+                {% endfor %}
             </ul>
         </div>
     </div>
+
+    <a class="button" href="{{ path('gil_queazy_quiz') }}/{{ quiz.id }}/question/{{ (questions|first).id }}">Commencer le Quiz !</a>
 {% endblock %}

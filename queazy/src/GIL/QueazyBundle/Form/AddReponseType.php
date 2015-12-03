@@ -10,7 +10,7 @@ class AddReponseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        $builder->add('reponseTypeContenu', 'choice', array(
+        /*$builder->add('reponseTypeContenu', 'choice', array(
             'choices' => array(
                 'Type de Contenu'  => array('1' => 'Texte', '2' => 'Image', '3' => 'MathML')
             ),
@@ -20,14 +20,14 @@ class AddReponseType extends AbstractType
             'attr' => array(
                 'class' => 'large-2 columns',
             )
-        ));
+        ));*/
         
         $builder->add('reponseContenu', 'text', array(
             'label' => false,
             'required' => false,
             'attr' => array(
                 'placeholder' => 'Reponse',
-                'class' => 'large-4 columns',
+                'class' => 'large-12 columns',
             )
         ));
     }

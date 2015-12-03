@@ -10,7 +10,7 @@ class AddQuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         
-        $builder->add('questionTypeContenu', 'choice', array(
+        /*$builder->add('questionTypeContenu', 'choice', array(
             'choices' => array(
                 'Type de Contenu'  => array('1' => 'Texte', '2' => 'Image', '3' => 'MathML')
             ),
@@ -21,14 +21,14 @@ class AddQuestionType extends AbstractType
             'attr' => array(
                 'class' => 'large-3 columns',
             )
-        ));
+        ));*/
         
         $builder->add('questionContenu', 'text', array(
             'label' => false,
             'required' => true,
             'attr' => array(
                 'placeholder' => 'Question',
-                'class' => 'large-9 columns',
+                'class' => 'large-12 columns',
             )
         ));
         

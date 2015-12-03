@@ -59,7 +59,7 @@
             <div class="small-10 small-centered columns">
                 <ul class="quiz-infos">
                 {% for quiz in quizs %}
-                <a href="#">
+                <a href="{{ path('gil_queazy_quiz') }}/{{ quiz.quiz.id }}">
                     <li class="quiz-infos item">
                         <div class="row">
                             <div class="small-10 columns text-centered quiz-name">
