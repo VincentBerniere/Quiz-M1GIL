@@ -55,25 +55,25 @@
             <h3>Quiz récemment ajoutés</h3>
         </div>
 
-        <div class="row">
-            <table class="liste-quiz">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Nb. Questions</th>
-                        <!-- <th>Note moyenne</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for quiz in quizs %}
-                        <tr>
-                            <td><a href="#">{{ quiz.quiz.titre }}</a></td>
-                            <td>{{ quiz.nb_questions }}</td>
-                            <!-- <td>{#{ quiz.noteMoyenne }#}</td> -->
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <div class="row quiz">
+            <div class="small-10 small-centered columns">
+                <ul class="quiz-infos">
+                {% for quiz in quizs %}
+                <a href="#">
+                    <li class="quiz-infos item">
+                        <div class="row">
+                            <div class="small-10 columns text-centered quiz-name">
+                                {{ quiz.quiz.titre }}
+                            </div>
+                            <div class="small-2 columns text-centered quiz-date">
+                                <small>Ajouté le {{ quiz.quiz.date|date("m/d/Y") }}</small>
+                            </div>
+                        </div>
+                    </li>
+                </a>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
     {% endif %}

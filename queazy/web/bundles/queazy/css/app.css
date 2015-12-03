@@ -59,9 +59,45 @@ body {
 .fa:hover {
     color: #409DC4;
 }
+.fa-trash, .fa-pencil {
+    color: white;
+}
+.fa-trash:hover {
+    color: #bc1339;
+}
+
+.quiz-infos {
+    color: white;
+    list-style: none;
+}
+.quiz-infos.item .quiz-name a {
+    color: white;
+}
+.quiz-infos.item {
+    margin: 10px auto;
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: #2ecc71;
+    border: 1px solid #27ae60;
+}
+.quiz-infos.item .quiz-tools {
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.quiz-infos.item .quiz-tools a {
+    margin-left: 5px;
+}
+.quiz-infos.item:hover .quiz-tools {
+    opacity: 1;
+}
 
 .footer {
     margin-top: 25px;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 .test {

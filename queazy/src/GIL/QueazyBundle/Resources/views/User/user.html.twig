@@ -5,28 +5,30 @@
 {% set menu_selected = 'User' %}
 
 {% block body %}
-    <h1>MES QUIZ</h1>
-    
-    <h3><a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add">Ajouter un Quiz</a></h3>
+    <h2>Mes quiz</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>TITRE</td>
-                <td>AUTEUR</td>
-                <td>DATE</td>
-            </tr>
-        </thead>
-    {% for quiz in listQuiz %}
-        <tr>
-            <td>{{ quiz.id }}</td>
-            <td>{{ quiz.titre }}</td>
-            <td>{{ quiz.auteur }}</td>
-            <td>{{ quiz.date|date("m/d/Y") }}</td>
-            <td>Modifier</td>
-            <td>Supprimer</td>
-        </tr>
-    {% endfor %}
-    </table>
+    <h4><a href="{{ path('gil_queazy_add_quiz') }}">Ajouter un Quiz</a></h4>
+
+    <div class="row quiz">
+        <div class="small-10 small-centered columns">
+            <ul class="quiz-infos">
+            {% for quiz in listQuiz %}
+                <li class="quiz-infos item">
+                    <div class="row">
+                        <div class="small-9 columns text-centered quiz-name">
+                            <a href="#">{{ quiz.titre }}</a>
+                        </div>
+                        <div class="small-2 columns text-centered quiz-date">
+                            <small>Ajouté le {{ quiz.date|date("m/d/Y") }}</small>
+                        </div>
+                        <div class="small-1 columns text-centered quiz-tools">
+                            <a href="#"><i class="fa fa-pencil"></i></a>
+                            <a href="#"><i class="fa fa-trash"></i></a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

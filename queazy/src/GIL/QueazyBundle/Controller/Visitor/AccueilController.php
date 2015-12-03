@@ -11,7 +11,6 @@ class AccueilController extends Controller
         // Affichage des quiz les plus récents
         $em = $this->getDoctrine()->getManager();
         $quizs = $em->getRepository('GILQueazyBundle:Quiz')->findAll();
-
         $listeQuiz = array();
 
         foreach ($quizs as $quiz) {

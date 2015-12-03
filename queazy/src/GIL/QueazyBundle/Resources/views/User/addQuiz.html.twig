@@ -7,9 +7,11 @@
 {% block body %}
     <h1>AJOUT DE QUIZ</h1>
 
-    <h3>{{ quiz.titre }}</h3>
+    <h3>Quiz : {{ quiz.titre }}</h3>
 
-    <a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}/add/{{ quiz.id }}/question"
+    <p>Nombre de questions : {{ listQuestion|length }} </p>
+
+    <a class="button" href="{{ path('gil_queazy_add_quiz') }}/{{ quiz.id }}/question"
        id="add-question" class="btn btn-success">Ajouter une question</a>
 
     <div class="row">
@@ -18,17 +20,19 @@
                 <tr>
                     <td>ID</td>
                     <td>QUESTION</td>
+                    <td>NB REPONSES</td>
                 </tr>
             </thead>
             {% for question in listQuestion %}
             <tr>
                 <td>{{ question.id }}</td>
                 <td>{{ question.questionContenu }}</td>
+                <td>{{ nbReponses[question.id] }}</td>
+                <td><a href="#">Modifier</a></td>
+                <td><a href="#">Supprimer</a></td>
             </tr>
             {% endfor %}
         </table>
     </div>
-   <a href="{{ path('gil_queazy_accueil') }}user/{{ user.id }}">
-       <button>Quiz Fini</button>
-   </a>
+   <a class="button" href="{{ path('gil_queazy_user') }}">Quiz Fini</a>
 {% endblock %}
