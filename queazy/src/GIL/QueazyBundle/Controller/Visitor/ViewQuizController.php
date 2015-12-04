@@ -6,9 +6,11 @@ use GIL\QueazyBundle\Entity\Quiz;
 use GIL\QueazyBundle\Entity\Question;
 use GIL\QueazyBundle\Entity\Reponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class ViewQuizController extends Controller
 {
+
     public function viewAction($quiz_id) {
         $em = $this->getDoctrine()->getManager();
 
@@ -24,8 +26,18 @@ class ViewQuizController extends Controller
         ));
     }
 
-    public function viewQuestionAction($quiz_id, $question_id) {
+    public function viewQuestionAction($quiz_id, $question_id, Request $request) {
         $em = $this->getDoctrine()->getManager();
+
+        if ($request->isMethod('POST')) {
+            $data = $request->request->get('reponse');
+            $choix_reponse = $em->getRepository('GILQueazyBundle:Reponse')->find($data);
+            echo 'Id de la reponse choisi: '.$data.'<br/>';
+            if ($choix_reponse->getCorrecte() == true) {
+                echo 'reponse true';
+            }
+            echo 'reponse false';
+        }
 
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
         $question = $em->getRepository('GILQueazyBundle:Question')->find($question_id);
@@ -36,7 +48,9 @@ class ViewQuizController extends Controller
         $q_suivante = null;
         $prochaine = false;
         $listQuestions = null;
-        $listQuestions = $em->getRepository('GILQueazyBundle:Question')->findAll();
+        $listQuestions = $em->getRepository('GILQueazyBundle:Question')->findBy(
+            array('quiz' => $quiz)
+        );
         foreach($listQuestions as $q) {
             if ($prochaine) {
                 $q_suivante = $q;
