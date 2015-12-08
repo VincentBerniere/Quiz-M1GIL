@@ -1,0 +1,14 @@
+{% extends "GILQueazyBundle::base.html.twig" %}
+
+{% set menu_selected = 'Quiz' %}
+
+{% block title %}Quiz{% endblock %}
+
+{% block body %}
+    <h3>{{ quiz.titre }}</h3>
+
+    <div class="row quiz">
+        <h5>Nombre de bonne réponse : {{ nbReponseCorrecte }}</h5>
+    </div>
+
+{% endblock %}
