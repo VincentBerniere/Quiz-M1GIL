@@ -12,13 +12,13 @@
             <h5>Liste des questions du quiz :</h5>
             <ul class="quiz-infos">
                 {% for question in questions %}
-                    <li class="quiz-infos item">
-                        <div class="row">
-                            <div class="small-10 columns text-centered quiz-name">
-                                {{ question.questionContenu }}
-                            </div>
+                <li class="quiz-infos item">
+                    <div class="row">
+                        <div class="small-10 columns text-centered quiz-name">
+                            {{ question.questionContenu }}
                         </div>
-                    </li>
+                    </div>
+                </li>
                 {% endfor %}
             </ul>
         </div>
