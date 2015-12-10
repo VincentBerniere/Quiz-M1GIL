@@ -8,43 +8,55 @@
     <h1>AJOUT DE QUIZ</h1>
 
     <form action="{{ path('gil_queazy_add_quiz') }}" method="POST">
-        <fieldset class ='large-12 columns'>
-            <legend>Quiz</legend>
-            {{ form_errors(form) }}
-            <div class="row">
+        {{ form_errors(form) }}
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-label">Quiz</span>
                 {{ form_widget(form.quiz) }}
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-label">Question</span>
                 {{ form_widget(form.questionContenu) }}
             </div>
-            <p>(Saisir au minimum 2 réponses)</p>
-            <div class="row">
+        </div>
+        <p>(Saisir au minimum 2 réponses)</p>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-label">1</span>
                 {{ form_widget(form1.reponseContenu) }}
                 {{ form_rest(form1) }}
+                <span class="input-group-label">2</span>
                 {{ form_widget(form2.reponseContenu) }}
                 {{ form_rest(form2) }}
             </div>
-            <div class="row">
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-label">3</span>
                 {{ form_widget(form3.reponseContenu) }}
                 {{ form_rest(form3) }}
+                <span class="input-group-label">4</span>
                 {{ form_widget(form4.reponseContenu) }}
                 {{ form_rest(form4) }}
             </div>
-            <div class="row">
-                <select name="reponse_choice">
-                    <option name="reponse1">Réponse 1</option>
-                    <option name="reponse2">Réponse 2</option>
-                    <option name="reponse3">Réponse 3</option>
-                    <option name="reponse4">Réponse 4</option>
-                </select>
+        </div>
+        <p>Laquelle de ces reponses est correcte?</p>
+        <div class="row">
+            <select name="reponse_choice">
+                <option name="reponse1">Réponse 1</option>
+                <option name="reponse2">Réponse 2</option>
+                <option name="reponse3">Réponse 3</option>
+                <option name="reponse4">Réponse 4</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                {{ form_widget(form.Valider) }}
+                {{ form_widget(form.Annuler) }}
             </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    {{ form_widget(form.Valider) }}
-                    {{ form_widget(form.Annuler) }}
-                </div>
-            </div>
-            {{ form_widget(form._token) }}
-        </fieldset>
+        </div>
+        {{ form_widget(form._token) }}
     </form>
 {% endblock %}

@@ -25,6 +25,12 @@ class ViewQuizController extends Controller
         ));
     }
 
+    /**
+     * @param $quiz_id
+     * @param $question_id
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function viewQuestionAction($quiz_id, $question_id, Request $request) {
         $em = $this->getDoctrine()->getManager();
 
@@ -35,13 +41,22 @@ class ViewQuizController extends Controller
             $data = $request->request->get('reponse');
             $choix_reponse = $em->getRepository('GILQueazyBundle:Reponse')->find($data);
             echo 'Id de la reponse choisi: '.$data.'<br/>';
+
+            $cookie_data = unserialize($_COOKIE[$quiz_id]);
+            $key = array_keys($cookie_data)[count(array_keys($cookie_data)) - 1];
+            $cookie_data[$key] = $data;
+            $cookie_data[$question_id] = false;
+            setcookie($quiz_id, serialize($cookie_data), time() + 86400, "/");
+
             if ($choix_reponse->getCorrecte() == true) {
                 echo 'reponse true';
                 if(!isset($_COOKIE[$quiz_id])) {
                     echo "Cookie named '" . $quiz_id . "' is not set!";
                 } else {
                     echo "Cookie '" . $quiz_id . "' is set!<br>";
-                    setcookie($quiz_id, ++$_COOKIE[$quiz_id], time() + (86400 * 1), "/"); // 86400 = 1 day
+                    /*$data = unserialize($_COOKIE[$quiz_id]);
+                    $data[key($data)] = ;
+                    setcookie($quiz_id, serialize($data), 0, "/");*/
                     echo "Value is: " . $_COOKIE[$quiz_id];
                 }
             } else {
@@ -49,8 +64,8 @@ class ViewQuizController extends Controller
             }
         } else {
             $cookie_name = $quiz_id;
-            $cookie_value = 0;
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 1), "/"); // 86400 = 1 day
+            $cookie_value[$question_id] = false;
+            setcookie($cookie_name, serialize($cookie_value), time() + 86400, "/"); // 86400 = 1 day
         }
 
         $reponses = $em->getRepository('GILQueazyBundle:Reponse')->findBy(
@@ -86,22 +101,23 @@ class ViewQuizController extends Controller
 
         if ($request->isMethod('POST')) {
             $data = $request->request->get('reponse');
-            $choix_reponse = $em->getRepository('GILQueazyBundle:Reponse')->find($data);
-            echo 'Id de la reponse choisi: '.$data.'<br/>';
-            if ($choix_reponse->getCorrecte() == true) {
-                echo 'reponse true';
-                if(!isset($_COOKIE[$quiz_id])) {
-                    echo "Cookie named '" . $quiz_id . "' is not set!";
-                } else {
-                    echo "Cookie '" . $quiz_id . "' is set!<br>";
-                    setcookie($quiz_id, ++$_COOKIE[$quiz_id], time() + (86400 * 1), "/"); // 86400 = 1 day
-                    echo "Value is: " . $_COOKIE[$quiz_id];
-                }
-            } else {
-                echo 'reponse false';
-            }
+
+            $cookie_data = unserialize($_COOKIE[$quiz_id]);
+            $key = array_keys($cookie_data)[count(array_keys($cookie_data)) - 1];
+            $cookie_data[$key] = $data;
+            setcookie($quiz_id, serialize($cookie_data), time() + 86400, "/");
         }
 
+        // On récupère l'ensemble des réponses de l'utilisateur !
+        $choix_reponse = null;
+        $nbReponseCorrecte = 0;
+        foreach($cookie_data as $key => $value) {
+            $choix_reponse[$key] = $em->getRepository('GILQueazyBundle:Reponse')->find(intval($value));
+
+            if ($choix_reponse[$key]->getCorrecte()) {
+                $nbReponseCorrecte++;
+            }
+        }
 
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
         $questions = $em->getRepository('GILQueazyBundle:Question')->findBy(
@@ -109,16 +125,23 @@ class ViewQuizController extends Controller
         );
         $reponses = null;
         foreach($questions as $question) {
-            $reponses[$question->getId()] = $em->getRepository('GILQueazyBundle:Reponse')->findBy(
+            $tmp =  $em->getRepository('GILQueazyBundle:Reponse')->findBy(
                 array('question' => $question)
             );
+            foreach ($tmp as $reponse) {
+                if ($reponse->getCorrecte()) {
+                    $reponses[$question->getId()] = $reponse;
+                }
+            }
         }
+
 
         return $this->render('GILQueazyBundle:Visitor:resultat.html.twig', array(
             'quiz' => $quiz,
-            'question' => $questions,
+            'questions' => $questions,
             'reponses' => $reponses,
-            'nbReponseCorrecte' => $_COOKIE[$quiz_id]
+            'choixReponses' => $choix_reponse,
+            'nbReponseCorrecte' => $nbReponseCorrecte
         ));
     }
 }

@@ -31,7 +31,7 @@ class QuizType extends AbstractType
             'required' => true,
             'attr' => array(
                 'placeholder' => 'Question',
-                'class' => 'large-12 columns',
+                'class' => 'large-12 columns input-group-field',
             )
         ));
 

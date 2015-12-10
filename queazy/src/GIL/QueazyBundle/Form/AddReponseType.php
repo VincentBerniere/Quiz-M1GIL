@@ -27,7 +27,7 @@ class AddReponseType extends AbstractType
             'required' => false,
             'attr' => array(
                 'placeholder' => 'Reponse',
-                'class' => 'large-12 columns',
+                'class' => 'large-12 columns input-group-field',
             )
         ));
     }
