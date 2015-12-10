@@ -95,6 +95,8 @@ class AddQuizController extends Controller
                 || ($data == 'Réponse 2' && $form_r2->isValid()) || ($data == 'Réponse 3' && $form_r3->isValid())
                 || ($data == 'Réponse 4' && $form_r4->isValid()))) {
                 $em->persist($question);
+                $typeResultat = str_split($request->request->get('resultat_choice'),1)[0];
+                $quiz->setTypeResultat($typeResultat);
                 $em->persist($quiz);
 
                 $em->flush();

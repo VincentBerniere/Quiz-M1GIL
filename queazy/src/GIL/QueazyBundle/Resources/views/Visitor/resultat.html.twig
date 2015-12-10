@@ -10,7 +10,7 @@
     <div class="row quiz">
         <h5>Score : {{ nbReponseCorrecte }}/{{ questions|length }}</h5>
     </div>
-
+    {% if quiz.typeResultat != 1 %}
     <table>
         {% for question in questions %}
         <div class="row quiz">
@@ -25,7 +25,11 @@
                     {% if choixReponses[question.id].id == reponses[question.id].id %}
                         Réponse correcte !
                     {% else %}
+                        {% if quiz.typeResultat == 2 %}
+                            Réponse incorrecte !
+                        {% else %}
                         Faux ! La bonne réponse était : {{ reponses[question.id].reponseContenu }}
+                        {% endif %}
                     {% endif %}
                 </td>
 
@@ -33,5 +37,6 @@
         </div>
         {% endfor %}
     </table>
+    {% endif %}
 
 {% endblock %}

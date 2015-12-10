@@ -10,7 +10,6 @@ class AddQuizType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-     
         $builder->add('titre', 'text', array(
             'label' => false,
             'required' => true,

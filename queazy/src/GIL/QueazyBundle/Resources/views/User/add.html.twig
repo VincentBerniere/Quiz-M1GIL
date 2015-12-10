@@ -17,6 +17,16 @@
         </div>
         <div class="row">
             <div class="input-group">
+                <span class="input-group-label">Résultat:</span>
+                <select class="input-group-field" name="resultat_choice">
+                    <option name="resultat1">1 : On affiche juste le score</option>
+                    <option name="resultat2">2 : On affiche le score et la liste des questions</option>
+                    <option name="resultat3">3 : On affiche le score, la liste des questions et les réponses correctes</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
                 <span class="input-group-label">Question</span>
                 {{ form_widget(form.questionContenu) }}
             </div>

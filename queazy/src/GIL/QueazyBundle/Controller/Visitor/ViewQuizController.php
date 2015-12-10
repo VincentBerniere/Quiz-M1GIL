@@ -135,7 +135,6 @@ class ViewQuizController extends Controller
             }
         }
 
-
         return $this->render('GILQueazyBundle:Visitor:resultat.html.twig', array(
             'quiz' => $quiz,
             'questions' => $questions,
