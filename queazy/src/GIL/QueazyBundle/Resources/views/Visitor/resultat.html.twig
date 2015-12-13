@@ -16,10 +16,10 @@
         <div class="row quiz">
             <tr>
                 <td>
-                    {{ question.questionContenu }}
+                    {{ question.questionContenu|raw }}
                 </td>
                 <td>
-                    {{ choixReponses[question.id].reponseContenu }}
+                    {{ choixReponses[question.id].reponseContenu|raw }}
                 </td>
                 <td>
                     {% if choixReponses[question.id].id == reponses[question.id].id %}
@@ -28,7 +28,7 @@
                         {% if quiz.typeResultat == 2 %}
                             Réponse incorrecte !
                         {% else %}
-                        Faux ! La bonne réponse était : {{ reponses[question.id].reponseContenu }}
+                        Faux ! La bonne réponse était : {{ reponses[question.id].reponseContenu|raw }}
                         {% endif %}
                     {% endif %}
                 </td>

@@ -22,21 +22,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/add.html.twig">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1538463">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state vertical-scroll-proportion="-16.461538">
+              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddQuizController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/User/AddQuizController.php">
+      <file leaf-file-name="addQuestion.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuestion.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.346154">
-              <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+            <state vertical-scroll-proportion="-22.884615">
+              <caret line="35" column="53" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -45,31 +45,19 @@
       <file leaf-file-name="resultat.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/resultat.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6723769">
-              <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.44325483">
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quiz.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Quiz.php">
+      <file leaf-file-name="viewQuiz.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuiz.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.961538">
-              <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+            <state vertical-scroll-proportion="-8.5">
+              <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ViewQuizController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/Visitor/ViewQuizController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.461538">
-              <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-              <folding>
-                <element signature="e#55#88#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -94,16 +82,12 @@
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/User/UserController.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Question.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Reponse.php" />
-        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuiz.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/accueil.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/listeQuiz.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/liste.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/Visitor/ListeQuizController.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/QuizEnCours.php" />
-        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuiz.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuizQuestion.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Form/QuizType.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Form/AddQuestionType.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Form/AddReponseType.php" />
@@ -113,6 +97,10 @@
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Quiz.php" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/add.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/User/AddQuizController.php" />
+        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuiz.html.twig" />
+        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuizQuestion.html.twig" />
+        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuiz.html.twig" />
         <option value="$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/resultat.html.twig" />
       </list>
     </option>
@@ -162,6 +150,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -553,7 +542,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -612,7 +600,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24743778" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -836,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuiz.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.730769">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Question.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45396146">
@@ -865,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7473234">
-          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/components/menu.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -890,13 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuiz.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07280514">
-          <caret line="6" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -949,13 +916,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuestion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40042827">
-          <caret line="35" column="53" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/ReponseRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -967,23 +927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33170733">
           <caret line="114" column="24" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuizQuestion.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12633833">
-          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/liste.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2719486">
-          <caret line="15" column="45" selection-start-line="10" selection-start-column="8" selection-end-line="15" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,16 +934,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39186296">
           <caret line="17" column="63" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/Visitor/ViewQuizController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.461538">
+        <state vertical-scroll-proportion="0.0">
           <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
-            <element signature="e#55#88#0#PHP" expanded="true" />
+            <element signature="e#55#88#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1009,13 +951,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75803">
           <caret line="30" column="62" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Entity/Quiz.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.961538">
+        <state vertical-scroll-proportion="0.0">
           <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
           <folding />
         </state>
@@ -1023,7 +964,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1538463">
+        <state vertical-scroll-proportion="0.0">
           <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
           <folding />
         </state>
@@ -1031,16 +972,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Controller/User/AddQuizController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.346154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="98" column="54" selection-start-line="98" selection-start-column="54" selection-end-line="98" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/liste.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.461538">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuiz.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66595286">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/User/addQuestion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.884615">
+          <caret line="35" column="53" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuizQuestion.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.254818">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/viewQuiz.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5">
+          <caret line="17" column="59" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GIL/QueazyBundle/Resources/views/Visitor/resultat.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6723769">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.44325483">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding />
         </state>
       </provider>
