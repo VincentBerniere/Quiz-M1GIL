@@ -8,6 +8,9 @@ class EditQuizController extends Controller
 {
     public function editAction($userID, $quizID)
     {
+
+        
+
         return $this->render('GILQueazyBundle:User:editQuiz.html.twig', array(
           'quizID' => $quizID,
           'userID' => $userID

@@ -5,7 +5,6 @@
 {% block title %}Question{% endblock %}
 
 {% block body %}
-
     <h3>{{ quiz.titre }}</h3>
 
     <h5>{{ question.questionContenu }}</h5>
@@ -17,7 +16,8 @@
     {% endif %}
         {% for reponse in reponses %}
         <div class ='large-12 columns'>
-            <input type="radio" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}> {{ reponse.reponseContenu }}
+            <input type="radio" id="reponse" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}>
+            <label for="reponse">{{ reponse.reponseContenu }}</label>
         </div>
         {% endfor %}
 

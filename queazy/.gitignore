@@ -6,5 +6,5 @@
 queazy.sublime*
 .buildpath
 .project
-.idea
+/.idea/*
 /.settings/*
