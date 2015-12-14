@@ -8,7 +8,35 @@
     <h3>{{ quiz.titre }}</h3>
 
     <div class="row quiz">
-        <h5>Nombre de bonne réponse : {{ nbReponseCorrecte }}</h5>
+        <h5>Score : {{ nbReponseCorrecte }}/{{ questions|length }}</h5>
     </div>
+    {% if quiz.typeResultat != 1 %}
+    <table>
+        {% for question in questions %}
+        <div class="row quiz">
+            <tr>
+                <td>
+                    {{ question.questionContenu|raw }}
+                </td>
+                <td>
+                    {{ choixReponses[question.id].reponseContenu|raw }}
+                </td>
+                <td>
+                    {% if choixReponses[question.id].id == reponses[question.id].id %}
+                        Réponse correcte !
+                    {% else %}
+                        {% if quiz.typeResultat == 2 %}
+                            Réponse incorrecte !
+                        {% else %}
+                        Faux ! La bonne réponse était : {{ reponses[question.id].reponseContenu|raw }}
+                        {% endif %}
+                    {% endif %}
+                </td>
+
+            </tr>
+        </div>
+        {% endfor %}
+    </table>
+    {% endif %}
 
 {% endblock %}

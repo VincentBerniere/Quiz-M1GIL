@@ -14,17 +14,26 @@
         </div>
         <p>(Saisir au minimum 2 réponses)</p>
         <div class="row">
-            {{ form_widget(form1.reponseContenu) }}
-            {{ form_rest(form1) }}
-            {{ form_widget(form2.reponseContenu) }}
-            {{ form_rest(form2) }}
+            <div class="input-group">
+                <span class="input-group-label">1</span>
+                {{ form_widget(form1.reponseContenu) }}
+                {{ form_rest(form1) }}
+                <span class="input-group-label">2</span>
+                {{ form_widget(form2.reponseContenu) }}
+                {{ form_rest(form2) }}
+            </div>
         </div>
         <div class="row">
-            {{ form_widget(form3.reponseContenu) }}
-            {{ form_rest(form3) }}
-            {{ form_widget(form4.reponseContenu) }}
-            {{ form_rest(form4) }}
+            <div class="input-group">
+                <span class="input-group-label">3</span>
+                {{ form_widget(form3.reponseContenu) }}
+                {{ form_rest(form3) }}
+                <span class="input-group-label">4</span>
+                {{ form_widget(form4.reponseContenu) }}
+                {{ form_rest(form4) }}
+            </div>
         </div>
+        <p>Laquelle de ces reponses est correcte?</p>
         <div class="row">
             <select name="reponse_choice">
                 <option name="reponse1">Réponse 1</option>
