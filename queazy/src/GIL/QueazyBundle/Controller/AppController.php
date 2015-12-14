@@ -15,7 +15,7 @@ class AppController extends Controller
 {
 
     public function getBDD() {
-        return $this->getDoctrine()->getEntityManager();
+        return $this->getDoctrine()->getManager();
     }
 
     public function getRepo($repoName) {
