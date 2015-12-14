@@ -2,9 +2,9 @@
 
 namespace GIL\QueazyBundle\Controller\User;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GIL\QueazyBundle\Controller\AppController;
 
-class EditQuizController extends Controller
+class EditQuizController extends AppController
 {
     public function editAction($userID, $quizID)
     {

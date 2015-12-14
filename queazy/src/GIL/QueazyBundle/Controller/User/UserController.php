@@ -2,11 +2,9 @@
 
 namespace GIL\QueazyBundle\Controller\User;
 
-use GIL\QueazyBundle\Entity\Utilisateur;
-use GIL\QueazyBundle\Entity\Quiz;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GIL\QueazyBundle\Controller\AppController;
 
-class UserController extends Controller
+class UserController extends AppController
 {
     public function userAction()
     {

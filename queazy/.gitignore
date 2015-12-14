@@ -7,4 +7,5 @@ queazy.sublime*
 .buildpath
 .project
 /.idea/*
+/app/cache
 /.settings/*
