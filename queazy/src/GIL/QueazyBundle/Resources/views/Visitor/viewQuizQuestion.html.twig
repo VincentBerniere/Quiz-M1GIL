@@ -5,21 +5,28 @@
 {% block title %}Question{% endblock %}
 
 {% block body %}
-    <h3>{{ quiz.titre }}</h3>
+    <h3>
+        <strong>Quiz : </strong>
+        {{ quiz.titre }}
+    </h3>
 
-    <h5>{{ question.questionContenu|raw }}</h5>
+    <h4>
+        <strong>Question : </strong>
+        {{ question.questionContenu|raw }}
+    </h4>
 
     {% if q_suivante != null %}
     <form action="{{ path('gil_queazy_accueil') }}quiz/{{ quiz.id }}/question/{{ q_suivante.id }}" method="post">
     {% else %}
     <form action="{{ path('gil_queazy_accueil') }}quiz/{{ quiz.id }}/resultat" method="post">
     {% endif %}
-        {% for reponse in reponses %}
-        <div class ='large-12 columns'>
-            <input type="radio" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}> {{ reponse.reponseContenu|raw }}
+        <div class='row'>
+            {% for reponse in reponses %}
+            <div class ='large-12 columns'>
+                <input type="radio" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}> {{ reponse.reponseContenu|raw }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-
         <input type="submit" class="button">
     </form>
 

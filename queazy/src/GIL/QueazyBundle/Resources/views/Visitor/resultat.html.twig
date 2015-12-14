@@ -8,7 +8,7 @@
     <h3>{{ quiz.titre }}</h3>
 
     <h5>Score : {{ nbReponseCorrecte }}/{{ questions|length }}</h5>
- 
+
     {% if quiz.typeResultat != 1 %}
     <table>
         {% for question in questions %}

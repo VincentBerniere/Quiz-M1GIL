@@ -37,31 +37,16 @@ class ViewQuizController extends Controller
         $quiz = $em->getRepository('GILQueazyBundle:Quiz')->find($quiz_id);
         $question = $em->getRepository('GILQueazyBundle:Question')->find($question_id);
 
+        // Gestion des bonnes (ou mauvaises) réponses avec des cookies (miam ! :p)
         if ($request->isMethod('POST')) {
             $data = $request->request->get('reponse');
-            $choix_reponse = $em->getRepository('GILQueazyBundle:Reponse')->find($data);
-            echo 'Id de la reponse choisi: '.$data.'<br/>';
 
             $cookie_data = unserialize($_COOKIE[$quiz_id]);
             $key = array_keys($cookie_data)[count(array_keys($cookie_data)) - 1];
             $cookie_data[$key] = $data;
             $cookie_data[$question_id] = false;
-            setcookie($quiz_id, serialize($cookie_data), time() + 86400, "/");
 
-            if ($choix_reponse->getCorrecte() == true) {
-                echo 'reponse true';
-                if(!isset($_COOKIE[$quiz_id])) {
-                    echo "Cookie named '" . $quiz_id . "' is not set!";
-                } else {
-                    echo "Cookie '" . $quiz_id . "' is set!<br>";
-                    /*$data = unserialize($_COOKIE[$quiz_id]);
-                    $data[key($data)] = ;
-                    setcookie($quiz_id, serialize($data), 0, "/");*/
-                    echo "Value is: " . $_COOKIE[$quiz_id];
-                }
-            } else {
-                echo 'reponse false';
-            }
+            setcookie($quiz_id, serialize($cookie_data), time() + 86400, "/");
         } else {
             $cookie_name = $quiz_id;
             $cookie_value[$question_id] = false;
@@ -78,6 +63,7 @@ class ViewQuizController extends Controller
         $listQuestions = $em->getRepository('GILQueazyBundle:Question')->findBy(
             array('quiz' => $quiz)
         );
+        // On cherche la prochaine question dans la liste de question restante
         foreach($listQuestions as $q) {
             if ($prochaine) {
                 $q_suivante = $q;
@@ -99,6 +85,7 @@ class ViewQuizController extends Controller
     public function resultatAction($quiz_id, Request $request) {
         $em = $this->getDoctrine()->getManager();
 
+        // Gestion de la dernière réponse avec des cookies (miam ! :p)
         if ($request->isMethod('POST')) {
             $data = $request->request->get('reponse');
 
@@ -130,7 +117,7 @@ class ViewQuizController extends Controller
             );
             foreach ($tmp as $reponse) {
                 if ($reponse->getCorrecte()) {
-                    $reponses[$question->getId()] = $reponse;
+                    $reponses[$question->getId()] = $reponse; // tableau de bonnes réponses
                 }
             }
         }

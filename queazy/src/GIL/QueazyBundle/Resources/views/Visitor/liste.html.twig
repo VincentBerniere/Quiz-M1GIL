@@ -14,8 +14,11 @@
                     <a href="{{ path('gil_queazy_quiz') }}/{{ quiz.id }}">
                         <li class="quiz-infos item">
                             <div class="row">
-                                <div class="small-10 columns text-centered quiz-name">
+                                <div class="small-8 columns text-centered quiz-name">
                                     {{ quiz.titre }}
+                                </div>
+                                <div class="small-2 columns text-centered quiz-name">
+                                    <small>Par {{ quiz.auteur }}</small>
                                 </div>
                                 <div class="small-2 columns text-centered quiz-date">
                                     <small>Ajouté le {{ quiz.date|date("m/d/Y") }}</small>
