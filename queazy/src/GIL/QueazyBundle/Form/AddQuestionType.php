@@ -23,7 +23,7 @@ class AddQuestionType extends AbstractType
             )
         ));*/
         
-        $builder->add('questionContenu', 'text', array(
+        $builder->add('questionContenu', 'textarea', array(
             'label' => false,
             'required' => true,
             'attr' => array(

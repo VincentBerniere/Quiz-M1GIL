@@ -30,13 +30,6 @@ class Reponse
     private $reponseContenu;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="reponse_type_contenu", type="string", length=255, nullable=true)
-     */
-    private $reponseTypeContenu;
-
-    /**
      * @ORM\Column(type="boolean", name="correcte", options={"default": false})
      */
     private $correcte;
@@ -50,7 +43,6 @@ class Reponse
     public function __construct()
     {
         $this->reponseContenu = '';
-        $this->reponseTypeContenu = 'Texte';
         $this->correcte = false;
     }
 
@@ -86,30 +78,6 @@ class Reponse
     public function getReponseContenu()
     {
         return $this->reponseContenu;
-    }
-
-    /**
-     * Set reponseTypeContenu
-     *
-     * @param string $reponseTypeContenu
-     *
-     * @return Reponse
-     */
-    public function setReponseTypeContenu($reponseTypeContenu)
-    {
-        $this->reponseTypeContenu = $reponseTypeContenu;
-
-        return $this;
-    }
-
-    /**
-     * Get reponseTypeContenu
-     *
-     * @return string
-     */
-    public function getReponseTypeContenu()
-    {
-        return $this->reponseTypeContenu;
     }
 
     public function getCorrecte()
