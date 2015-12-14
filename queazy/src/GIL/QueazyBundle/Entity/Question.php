@@ -30,22 +30,10 @@ class Question
     private $questionContenu;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="question_type_contenu", type="string", length=255)
-     */
-    private $questionTypeContenu;
-
-    /**
      * @ORM\ManyToOne(targetEntity="GIL\QueazyBundle\Entity\Quiz")
      * @ORM\JoinColumn(nullable=false)
      */
     private $quiz;
-
-    public function __construct()
-    {
-        $this->questionTypeContenu = 'Texte';
-    }
 
     /**
      * Get id
@@ -79,30 +67,6 @@ class Question
     public function getQuestionContenu()
     {
         return $this->questionContenu;
-    }
-
-    /**
-     * Set questionTypeContenu
-     *
-     * @param string $questionTypeContenu
-     *
-     * @return Question
-     */
-    public function setQuestionTypeContenu($questionTypeContenu)
-    {
-        $this->questionTypeContenu = $questionTypeContenu;
-
-        return $this;
-    }
-
-    /**
-     * Get questionTypeContenu
-     *
-     * @return string
-     */
-    public function getQuestionTypeContenu()
-    {
-        return $this->questionTypeContenu;
     }
 
     public function setQuiz(Quiz $quiz)

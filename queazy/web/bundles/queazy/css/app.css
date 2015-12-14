@@ -101,3 +101,15 @@ body {
 .test {
     background-color: rgba(20, 200, 100, 0.5);
 }
+
+textarea {
+    resize: vertical;
+}
+
+th {
+    border: 1px solid #bdc3c7;
+}
+
+td {
+    border: 1px solid #bdc3c7;
+}

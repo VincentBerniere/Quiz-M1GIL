@@ -7,9 +7,8 @@
 {% block body %}
     <h3>{{ quiz.titre }}</h3>
 
-    <div class="row quiz">
-        <h5>Score : {{ nbReponseCorrecte }}/{{ questions|length }}</h5>
-    </div>
+    <h5>Score : {{ nbReponseCorrecte }}/{{ questions|length }}</h5>
+ 
     {% if quiz.typeResultat != 1 %}
     <table>
         {% for question in questions %}

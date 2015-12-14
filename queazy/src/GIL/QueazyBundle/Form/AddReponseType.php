@@ -22,7 +22,7 @@ class AddReponseType extends AbstractType
             )
         ));*/
         
-        $builder->add('reponseContenu', 'text', array(
+        $builder->add('reponseContenu', 'textarea', array(
             'label' => false,
             'required' => false,
             'attr' => array(

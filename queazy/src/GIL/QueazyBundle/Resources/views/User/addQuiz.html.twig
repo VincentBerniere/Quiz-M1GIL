@@ -15,19 +15,17 @@
        id="add-question" class="btn btn-success">Ajouter une question</a>
 
     <div class="row">
-        <table>
+        <table class="hover">
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>QUESTION</td>
-                    <td>NB REPONSES</td>
+                    <th>QUESTION</th>
+                    <th>NB REPONSES</th>
                 </tr>
             </thead>
             {% for question in listQuestion %}
             <tr>
-                <td>{{ question.id }}</td>
                 <td>{{ question.questionContenu|raw }}</td>
-                <td>{{ nbReponses[question.id] }}</td>
+                <td class="text-center">{{ nbReponses[question.id] }}</td>
                 <td><a href="#">Modifier</a></td>
                 <td><a href="#">Supprimer</a></td>
             </tr>
