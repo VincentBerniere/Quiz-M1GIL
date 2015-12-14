@@ -2,15 +2,19 @@
 
 namespace GIL\QueazyBundle\Controller\Visitor;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GIL\QueazyBundle\Controller\AppController;
 
-class AccueilController extends Controller
+class AccueilController extends AppController
 {
     public function accueilAction()
     {
         // Affichage des quiz les plus récents
         $em = $this->getDoctrine()->getManager();
-        $quizs = $em->getRepository('GILQueazyBundle:Quiz')->findAll();
+        $quizs = $em->getRepository('GILQueazyBundle:Quiz')->findBy(
+            array(),
+            array(),
+            5
+        );
         $listeQuiz = array();
 
         foreach ($quizs as $quiz) {

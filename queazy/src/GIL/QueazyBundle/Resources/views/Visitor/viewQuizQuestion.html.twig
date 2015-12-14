@@ -23,7 +23,8 @@
         <div class='row'>
             {% for reponse in reponses %}
             <div class ='large-12 columns'>
-                <input type="radio" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}> {{ reponse.reponseContenu|raw }}
+                <input type="radio" id="reponse" name="reponse" value="{{ reponse.id }}" {% if reponse == reponses|first %}checked="checked"{% endif %}>
+                <label for="reponse">{{ reponse.reponseContenu|raw }}</label>
             </div>
             {% endfor %}
         </div>

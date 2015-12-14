@@ -1,4 +1,4 @@
-    # Listage de l'ensemble des quiz
+# Listage de l'ensemble des quiz
 gil_queazy_quiz:
     path:     /quiz
     defaults: { _controller: GILQueazyBundle:Visitor/ListeQuiz:liste }
@@ -8,6 +8,14 @@ gil_queazy_quiz_questions:
     path:     /quiz/{quiz_id}
     defaults: { _controller: GILQueazyBundle:Visitor/ViewQuiz:view }
     requirements:
+      quiz_id: \d+
+
+# Suppression du quiz
+gil_queazy_quiz_delete:
+    path:     /user/{user_id}/quiz/delete/{quiz_id}
+    defaults: { _controller: GILQueazyBundle:User/DeleteQuiz:delete }
+    requirements:
+      user_id: \d+
       quiz_id: \d+
 
 # Visualisation d'une question d'un quiz en particulier

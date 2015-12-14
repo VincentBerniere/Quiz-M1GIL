@@ -2,9 +2,9 @@
 
 namespace GIL\QueazyBundle\Controller\Admin;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GIL\QueazyBundle\Controller\AppController;
 
-class AdminController extends Controller
+class AdminController extends AppController
 {
 
     /**

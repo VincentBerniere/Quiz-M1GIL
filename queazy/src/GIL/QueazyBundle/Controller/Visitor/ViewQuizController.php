@@ -2,13 +2,10 @@
 
 namespace GIL\QueazyBundle\Controller\Visitor;
 
-use GIL\QueazyBundle\Entity\Quiz;
-use GIL\QueazyBundle\Entity\Question;
-use GIL\QueazyBundle\Entity\Reponse;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use GIL\QueazyBundle\Controller\AppController;
 use Symfony\Component\HttpFoundation\Request;
 
-class ViewQuizController extends Controller
+class ViewQuizController extends AppController
 {
     public function viewAction($quiz_id) {
         $em = $this->getDoctrine()->getManager();
